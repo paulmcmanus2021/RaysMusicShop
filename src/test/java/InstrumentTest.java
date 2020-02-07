@@ -76,8 +76,9 @@ public class InstrumentTest {
         assertEquals(3, trumpet.getNumberOfValves());
     }
 
+    //IPlay method
     @Test
-    public void canUseIplayToReturnSound(){
-        assertEquals("Badum-tsh", drumkit.getSound());
+    public void canUseIPlayToReturnSound(){
+        assertEquals("Badum-tsh", drumkit.playInstrument());
     }
 }
