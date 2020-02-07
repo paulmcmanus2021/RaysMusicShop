@@ -1,6 +1,8 @@
 package instruments;
 
-public abstract class Instrument {
+import behaviours.IPlay;
+
+public abstract class Instrument implements IPlay {
 
     private String material;
     private String colour;
@@ -55,5 +57,9 @@ public abstract class Instrument {
 
     public InstrumentType getType() {
         return type;
+    }
+
+    public String playInstrument() {
+        return this.sound;
     }
 }
