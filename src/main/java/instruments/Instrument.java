@@ -5,16 +5,19 @@ public abstract class Instrument {
     private String material;
     private String colour;
     private String sound;
-    private Double buyPrice;
-    private Double sellPrice;
+    private double buyPrice;
+    private double sellPrice;
+    private double profit;
     private InstrumentType type;
 
-    public Instrument(String material, String colour, String sound, Double buyPrice, Double sellPrice, InstrumentType type) {
+
+    public Instrument(String material, String colour, String sound, double buyPrice, double sellPrice, double profit, InstrumentType type) {
         this.material = material;
         this.colour = colour;
         this.sound = sound;
         this.buyPrice = buyPrice;
         this.sellPrice = sellPrice;
+        this.profit = profit;
         this.type = type;
     }
 
@@ -30,12 +33,24 @@ public abstract class Instrument {
         return sound;
     }
 
-    public Double getBuyPrice() {
+    public double getBuyPrice() {
         return buyPrice;
     }
 
-    public Double getSellPrice() {
+    public void setBuyPrice(double buyPrice) {
+        this.buyPrice = buyPrice;
+    }
+
+    public double getSellPrice() {
         return sellPrice;
+    }
+
+    public void setSellPrice(double sellPrice) {
+        this.sellPrice = sellPrice;
+    }
+
+    public double getProfit() {
+        return profit;
     }
 
     public InstrumentType getType() {

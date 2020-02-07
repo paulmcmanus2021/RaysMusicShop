@@ -4,9 +4,10 @@ public class Drumkit extends Instrument {
 
     private int numberOfDrums;
 
-    public Drumkit(String material, String colour, String sound, Double buyPrice, Double sellPrice, InstrumentType type, int numberOfDrums) {
-        super(material, colour, sound, buyPrice, sellPrice, type);
+    public Drumkit(String material, String colour, String sound, double buyPrice, double sellPrice, double profit, InstrumentType type, int numberOfDrums) {
+        super(material, colour, sound, buyPrice, sellPrice, profit, type);
         this.numberOfDrums = numberOfDrums;
+
     }
 
     public int getNumberOfDrums() {
