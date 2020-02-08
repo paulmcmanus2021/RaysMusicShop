@@ -2,7 +2,22 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="3c9bae2f-7b0b-44cd-a124-e32528b42ae1" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/accessories/Accessory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/accessories/Accessory.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/behaviours/ISell.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/behaviours/ISell.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/instruments/Drumkit.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/instruments/Drumkit.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/instruments/Guitar.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/instruments/Guitar.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/instruments/Instrument.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/instruments/Instrument.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/instruments/Oboe.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/instruments/Oboe.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/instruments/Trumpet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/instruments/Trumpet.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/InstrumentTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/InstrumentTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/accessories/Accessory.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/accessories/Accessory.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/behaviours/ISell.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/behaviours/ISell.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/instruments/Drumkit.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/instruments/Drumkit.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/instruments/Guitar.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/instruments/Guitar.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/instruments/Instrument.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/instruments/Instrument.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/instruments/Oboe.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/instruments/Oboe.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/instruments/Trumpet.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/instruments/Trumpet.class" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -53,7 +68,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.InstrumentTest">
+  <component name="RunManager" selected="JUnit.InstrumentTest.canUpdateBuySellAndReturnNewProfit">
     <configuration name="InstrumentTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="RaysMusicShop" />
       <option name="PACKAGE_NAME" value="" />
@@ -73,11 +88,21 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="InstrumentTest.canGetMaterial" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="InstrumentTest.canUpdateBuySellAndReturnNewProfit" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="RaysMusicShop" />
       <option name="PACKAGE_NAME" value="" />
       <option name="MAIN_CLASS_NAME" value="InstrumentTest" />
-      <option name="METHOD_NAME" value="canGetMaterial" />
+      <option name="METHOD_NAME" value="canUpdateBuySellAndReturnNewProfit" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="InstrumentTest.canUpdateSellPrice" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="RaysMusicShop" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="InstrumentTest" />
+      <option name="METHOD_NAME" value="canUpdateSellPrice" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -95,10 +120,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.InstrumentTest.canUpdateBuySellAndReturnNewProfit" />
+        <item itemvalue="JUnit.InstrumentTest.canUpdateSellPrice" />
         <item itemvalue="JUnit.InstrumentTest" />
         <item itemvalue="JUnit.InstrumentTest.canUseIplayToReturnSound" />
         <item itemvalue="JUnit.InstrumentTest.canGetInstrumentType" />
-        <item itemvalue="JUnit.InstrumentTest.canGetMaterial" />
       </list>
     </recent_temporary>
   </component>

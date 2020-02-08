@@ -13,4 +13,8 @@ public class Drumkit extends Instrument {
     public int getNumberOfDrums() {
         return numberOfDrums;
     }
+
+    public double calculateMarkup() {
+        return this.getSellPrice() - this.getBuyPrice();
+    }
 }

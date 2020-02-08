@@ -1,3 +1,4 @@
+import behaviours.ISell;
 import instruments.*;
 import org.junit.Before;
 import org.junit.Test;
@@ -55,6 +56,29 @@ public class InstrumentTest {
         assertEquals(InstrumentType.BRASS, trumpet.getType());
     };
 
+    //Instrument Setters
+
+    @Test
+    public void canUpdateBuyPrice(){
+        guitar.setBuyPrice(100.00);
+        assertEquals(100.00, guitar.getBuyPrice(),0.01);
+    }
+
+    @Test
+    public void canUpdateSellPrice(){
+        drumkit.setSellPrice(149.99);
+        assertEquals(149.99, drumkit.getSellPrice(),0.01);
+    }
+
+    //Combine setters and test calculateMarkup
+    @Test
+    public void canUpdateBuySellAndReturnNewProfit(){
+        trumpet.setBuyPrice(200.00);
+        trumpet.setSellPrice(299.99);
+        double result = trumpet.calculateMarkup();
+        assertEquals(99.99, result,0.01);
+    }
+
     //InstanceVariable Tests
     @Test
     public void canGetNumberOfGuitarStrings(){
@@ -76,9 +100,17 @@ public class InstrumentTest {
         assertEquals(3, trumpet.getNumberOfValves());
     }
 
-    //IPlay method
+    //IPlay interface
     @Test
     public void canUseIPlayToReturnSound(){
         assertEquals("Badum-tsh", drumkit.playInstrument());
     }
+
+    //ISell interface
+    @Test
+    public void canUseISellToReturnProfit(){
+        assertEquals(89.99, oboe.calculateMarkup(), 0.01);
+    }
+
+
 }

@@ -14,4 +14,8 @@ public class Trumpet extends Instrument {
     public int getNumberOfValves() {
         return numberOfValves;
     }
+
+    public double calculateMarkup() {
+        return this.getSellPrice() - this.getBuyPrice();
+    }
 }

@@ -13,4 +13,8 @@ public class Guitar extends Instrument {
     public int getNumberOfStrings() {
         return numberOfStrings;
     }
+
+    public double calculateMarkup() {
+        return this.getSellPrice() - this.getBuyPrice();
+    }
 }

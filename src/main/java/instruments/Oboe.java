@@ -14,4 +14,8 @@ public class Oboe extends Instrument {
     public String getOboeStyle() {
         return oboeStyle;
     }
+
+    public double calculateMarkup() {
+        return this.getSellPrice() - this.getBuyPrice();
+    }
 }
