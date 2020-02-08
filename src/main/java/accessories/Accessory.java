@@ -1,10 +1,8 @@
 package accessories;
 
-
-import behaviours.IPlay;
 import behaviours.ISell;
 
-public abstract class Accessory implements IPlay, ISell {
+public abstract class Accessory implements ISell {
 
     private String description;
     private double buyPrice;
@@ -34,5 +32,9 @@ public abstract class Accessory implements IPlay, ISell {
 
     public void setSellPrice(double sellPrice) {
         this.sellPrice = sellPrice;
+    }
+
+    public double calculateMarkup() {
+        return this.sellPrice - this.buyPrice;
     }
 }
