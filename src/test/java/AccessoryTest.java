@@ -36,6 +36,17 @@ public class AccessoryTest {
         assertEquals(0.75, plectrum.getSellPrice(),0.01);
     }
 
+    //SetterTests
+    @Test
+
+    public void canUpdateBuySellPrice(){
+        plectrum.setBuyPrice(0.05);
+        plectrum.setSellPrice(1.00);
+        assertEquals(0.95, plectrum.calculateMarkup(),0.01);
+
+    }
+
+
     //ISell Interface
     @Test
     public void canGetProfit(){
