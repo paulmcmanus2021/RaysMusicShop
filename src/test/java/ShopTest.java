@@ -10,6 +10,9 @@ import static org.junit.Assert.assertEquals;
 
 public class ShopTest {
 
+    Shop shop;
+    private ArrayList<ISell> stock;
+
     Guitar guitar;
     Drumkit drumkit;
     Oboe oboe;
@@ -22,13 +25,15 @@ public class ShopTest {
     Accessory sheetMusic;
     private ArrayList<Accessory> accessories;
 
-    private ArrayList<ISell> stock;
 
     @Before
-    public void before(){
-        guitar = new Guitar("Nylon","Red","Twang", 50.00, 75.00, 25.00, InstrumentType.STRINGS,6);
-        drumkit = new Drumkit("Wood", "Black","Badum-tsh",130.00,199.99,69.99,InstrumentType.PERCUSSION,4);
-        oboe = new Oboe("Resin","Black","Laaaaaa",100.00,189.99,89.99,InstrumentType.WOODWIND,"Wiener");
+    public void before() {
+        shop = new Shop();
+        stock = new ArrayList<ISell>();
+
+        guitar = new Guitar("Nylon", "Red", "Twang", 50.00, 75.00, 25.00, InstrumentType.STRINGS, 6);
+        drumkit = new Drumkit("Wood", "Black", "Badum-tsh", 130.00, 199.99, 69.99, InstrumentType.PERCUSSION, 4);
+        oboe = new Oboe("Resin", "Black", "Laaaaaa", 100.00, 189.99, 89.99, InstrumentType.WOODWIND, "Wiener");
         trumpet = new Trumpet("Brass", "Blue", "Brrrrppt", 48.00, 96.00, 48.00, InstrumentType.BRASS, 3);
         instruments = new ArrayList<Instrument>();
 
@@ -37,66 +42,74 @@ public class ShopTest {
         plectrum = new Plectrum("Use this to play guitar.", 0.15, 0.75);
         sheetMusic = new SheetMusic("Use this to know what note comes next.", 5.00, 9.99);
         accessories = new ArrayList<Accessory>();
+    }
 
-        stock = new ArrayList<ISell>();
+    //Add and Remove Instruments
+    @Test
+    public void canAddToInstrumentArray() {
+        shop.addInstrument(guitar);
+        shop.addInstrument(drumkit);
+        shop.addInstrument(oboe);
+        shop.addInstrument(trumpet);
+        assertEquals(4, shop.getInstrumentCount());
     }
 
     @Test
-    public void canAddInstrumentToInstrumentsArray(){
-        instruments.add(guitar);
-        instruments.add(drumkit);
-        instruments.add(oboe);
-        instruments.add(trumpet);
-        assertEquals(4, instruments.size());
+    public void canRemoveFromInstrumentArray() {
+        shop.addInstrument(guitar);
+        shop.addInstrument(drumkit);
+        shop.addInstrument(oboe);
+        shop.addInstrument(trumpet);
+        shop.removeInstrument(trumpet);
+        assertEquals(3, shop.getInstrumentCount());
+    }
+
+    //Add and remove Accesories
+    @Test
+    public void canAddToAccessoryArray() {
+        shop.addAccessory(drumSticks);
+        shop.addAccessory(musicStand);
+        shop.addAccessory(plectrum);
+        shop.addAccessory(sheetMusic);
+        assertEquals(4, shop.getAccessoryCount());
     }
 
     @Test
-    public void canAddAccessoriesToAccessoriesArray(){
-        accessories.add(drumSticks);
-        accessories.add(musicStand);
-        accessories.add(plectrum);
-        accessories.add(sheetMusic);
-        assertEquals(4, accessories.size());
+    public void canRemoveFromAccessoryArray() {
+        shop.addAccessory(drumSticks);
+        shop.addAccessory(musicStand);
+        shop.addAccessory(plectrum);
+        shop.addAccessory(sheetMusic);
+        shop.removeAccessory((sheetMusic));
+        assertEquals(3, shop.getAccessoryCount());
+    }
+
+    //Add ArrayList<Instrument> and ArrayList<Accessory> to ArrayList<ISell>
+    @Test
+    public void canGetAllStock() {
+        shop.addInstrument(guitar);
+        shop.addInstrument(drumkit);
+        shop.addInstrument(oboe);
+        shop.addInstrument(trumpet);
+        shop.addAccessory(drumSticks);
+        shop.addAccessory(musicStand);
+        shop.addAccessory(plectrum);
+        shop.addAccessory(sheetMusic);
+        ArrayList<ISell> result = shop.getStock();
+        assertEquals(8, result.size());
     }
 
     @Test
-    public void canAddISellToStock(){
-        stock.add(guitar);
-        stock.add(drumkit);
-        stock.add(oboe);
-        stock.add(trumpet);
-        stock.add(drumSticks);
-        stock.add(musicStand);
-        stock.add(plectrum);
-        stock.add(sheetMusic);
-        assertEquals(8, stock.size());
+    public void canGetTotalPotentialProfit() {
+        shop.addInstrument(guitar);
+        shop.addInstrument(drumkit);
+        shop.addInstrument(oboe);
+        shop.addInstrument(trumpet);
+        shop.addAccessory(drumSticks);
+        shop.addAccessory(musicStand);
+        shop.addAccessory(plectrum);
+        shop.addAccessory(sheetMusic);
+        double result = shop.calculateTotalProfit();
+        assertEquals(256.57, result, 0.01);
     }
-
-    @Test
-    public void canAddRemoveFromArrayLists(){
-        //Instruments
-        instruments.add(guitar);
-        instruments.add(drumkit);
-        instruments.add(oboe);
-        instruments.remove(drumkit);
-
-        //Accessories
-        accessories.add(drumSticks);
-        accessories.add(musicStand);
-        accessories.add(plectrum);
-        accessories.remove(musicStand);
-
-        //Stock
-        stock.add(drumkit);
-        stock.add(oboe);
-        stock.add(trumpet);
-        stock.add(drumSticks);
-        stock.add(musicStand);
-        stock.add(plectrum);
-        stock.remove(trumpet);
-        assertEquals(2,instruments.size());
-        assertEquals(2,accessories.size());
-        assertEquals(5,stock.size());
-    }
-
 }

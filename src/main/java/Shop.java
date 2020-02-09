@@ -8,24 +8,39 @@ public class Shop {
 
     private ArrayList<Instrument> instruments;
     private ArrayList<Accessory> accessories;
-    private ArrayList<ISell> stock;
 
     public Shop() {
         instruments = new ArrayList<Instrument>();
         accessories = new ArrayList<Accessory>();
-        stock = new ArrayList<ISell>();
     }
 
-    public void addInstrumentToStock(Instrument instrument){
-        stock.add(instrument);
+    public void addInstrument(Instrument instrument){this.instruments.add(instrument);}
+
+    public void removeInstrument(Instrument instrument){this.instruments.remove(instrument);}
+
+
+    public void addAccessory(Accessory accessory){this.accessories.add(accessory);}
+
+    public void removeAccessory(Accessory accessory){this.accessories.remove(accessory);}
+
+    public int getInstrumentCount(){ return this.instruments.size();}
+
+    public int getAccessoryCount(){ return this.accessories.size();}
+
+    public ArrayList<ISell> getStock() {
+        ArrayList<ISell> stock = new ArrayList<>();
+        stock.addAll(this.instruments);
+        stock.addAll(this.accessories);
+        return stock;
     }
 
-    public void addAccessoryToStock(Accessory accessory){
-        stock.add(accessory);
+    public double calculateTotalProfit(){
+        double totalProfit = 0;
+        ArrayList<ISell> stock = getStock();
+        for(ISell item : stock){
+            totalProfit += item.calculateMarkup();
+        }
+        return totalProfit;
     }
-
-    
-
-
 }
 
