@@ -18,4 +18,10 @@ public class Oboe extends Instrument {
     public double calculateMarkup() {
         return this.getSellPrice() - this.getBuyPrice();
     }
+
+
+    @Override
+    public String playInstrument() {
+        return "Laaaaaa";
+    }
 }

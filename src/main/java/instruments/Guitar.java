@@ -9,12 +9,18 @@ public class Guitar extends Instrument {
         this.numberOfStrings = numberOfStrings;
     }
 
-
+    //Instance method
     public int getNumberOfStrings() {
         return numberOfStrings;
     }
 
+    //ISell Interface method
     public double calculateMarkup() {
         return this.getSellPrice() - this.getBuyPrice();
+    }
+
+    //IPlay interface method
+    public String playInstrument() {
+        return "Twang";
     }
 }

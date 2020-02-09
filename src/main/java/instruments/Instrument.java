@@ -24,6 +24,7 @@ public abstract class Instrument implements IPlay, ISell {
         this.type = type;
     }
 
+    //Getters
     public String getMaterial() {
         return material;
     }
@@ -40,16 +41,8 @@ public abstract class Instrument implements IPlay, ISell {
         return buyPrice;
     }
 
-    public void setBuyPrice(double buyPrice) {
-        this.buyPrice = buyPrice;
-    }
-
     public double getSellPrice() {
         return sellPrice;
-    }
-
-    public void setSellPrice(double sellPrice) {
-        this.sellPrice = sellPrice;
     }
 
     public double getProfit() {
@@ -60,7 +53,15 @@ public abstract class Instrument implements IPlay, ISell {
         return type;
     }
 
-    public String playInstrument() {
-        return this.sound;
+    //Setters
+    public void setBuyPrice(double buyPrice) {
+        this.buyPrice = buyPrice;
     }
+
+    public void setSellPrice(double sellPrice) {
+        this.sellPrice = sellPrice;
+    }
+
+    //IPlay interface method.
+    public abstract String playInstrument();
 }
